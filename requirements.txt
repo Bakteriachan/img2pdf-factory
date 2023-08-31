@@ -1,0 +1,5 @@
+fpdf @ git+https://github.com/bakteriachan/pyfpdf
+get-image-size==0.2.0
+pika==1.3.2
+Pillow==10.0.0
+urllib3==2.0.4
