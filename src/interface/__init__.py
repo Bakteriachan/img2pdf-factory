@@ -41,7 +41,7 @@ class RabbitMQInterface:
         consumers = RabbitMQInterface.consumers or []
 
         for queue in queues:
-            channel.queue_declare(queue)
+            channel.queue_declare(queue, durable=True)
         
         for consumer in consumers:
             channel.basic_consume(
@@ -78,6 +78,7 @@ class RabbitMQInterface:
 
         def wrapper(func):
             RabbitMQInterface.consumers.append({ 'queue': queue, 'callback': func, 'ack': auto_ack })
+            return func
 
         return wrapper
 

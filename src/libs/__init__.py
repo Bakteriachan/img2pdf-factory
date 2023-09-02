@@ -1,1 +1,1 @@
-from .images2pdf import images2pdf
+from .images2pdf import images2pdf, mergePDFs
